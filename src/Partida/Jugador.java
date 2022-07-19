@@ -1,5 +1,6 @@
 package Partida;
 import Errores.*;
+
 public class Jugador {
 
     private ColorPiezas colorPiezas;
@@ -8,7 +9,11 @@ public class Jugador {
 
     }
 
-    public void ingresarJugada(String casillas, Tablero tablero) throws PiezaNoCorrespondiente, CoordenadasFueraDeRango{
+    public void ingresarJugada(String casillas, Tablero tablero) throws PiezaNoCorrespondiente, CoordenadasInválidas {
+
+        if (casillas.length() !=4){
+            throw new CoordenadasInválidas("Coordenadas incompletas");
+        }
 
         int[] columna = new int[2];
         int[] fila = new int[2];
@@ -23,7 +28,7 @@ public class Jugador {
         
     }
 
-    private int transformarColumnaIngresadaEnIndice(char letra) throws CoordenadasFueraDeRango{
+    private int transformarColumnaIngresadaEnIndice(char letra) throws CoordenadasInválidas {
 
         String cadenaDeLetras = "abcdefgh";
 
@@ -32,7 +37,7 @@ public class Jugador {
                 return  i;
             }
         }
-        throw new CoordenadasFueraDeRango("Coordenada ingresada no existe");
+        throw new CoordenadasInválidas("Coordenada ingresada no existe");
     }
 
 }

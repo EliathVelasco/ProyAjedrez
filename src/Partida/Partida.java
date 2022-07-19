@@ -1,6 +1,5 @@
 package Partida;
 
-import Partida.*;
 import Errores.*;
 
 import java.util.Scanner;
@@ -35,7 +34,7 @@ public class Partida {
                     setTurnoActual(NEGRAS);
                 } catch (PiezaNoCorrespondiente e) {
                     System.out.println(e.getMessage());
-                } catch (CoordenadasFueraDeRango i){
+                } catch (CoordenadasInválidas i){
                     System.out.println(i.getMessage());
                 }
             }
@@ -48,7 +47,7 @@ public class Partida {
                     setTurnoActual(ColorPiezas.BLANCAS);
                 } catch (PiezaNoCorrespondiente e) {
                     System.out.println(e.getMessage());
-                }catch (CoordenadasFueraDeRango i){
+                }catch (CoordenadasInválidas i){
                     System.out.println(i.getMessage());
                 }
             }
