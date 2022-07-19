@@ -4,13 +4,9 @@ public class Main {
     public static void main(String[] args) {
 
         Partida partida = new Partida();
-
+        System.out.println("eeee");
         partida.preguntarJugada();
-        System.out.println("XDDDDDD");
 
     }
-    //ALGO COME HUEVO EN CALDO
-    //Como
-
     //Mov
 }
