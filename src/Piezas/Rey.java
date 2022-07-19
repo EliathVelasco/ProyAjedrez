@@ -10,15 +10,17 @@ public class Rey extends Pieza {
 
     @Override
     public Vector obtenerListaDeMovimientosLegales(int fila, int columna, Tablero tablero) {
-        this.listaDeMovimientosLegales.removeAllElements();
-        this.listaDeMovimientosLegales.addElement("" +(columna)+(fila+1));
-        this.listaDeMovimientosLegales.addElement("" +(columna+1)+(fila+1));
-        this.listaDeMovimientosLegales.addElement("" +(columna-1)+(fila+1));
-        this.listaDeMovimientosLegales.addElement("" +(columna)+(fila-1));
-        this.listaDeMovimientosLegales.addElement("" +(columna+1)+(fila-1));
-        this.listaDeMovimientosLegales.addElement("" +(columna-1)+(fila-1));
-        this.listaDeMovimientosLegales.addElement("" +(columna+1)+(fila));
-        this.listaDeMovimientosLegales.addElement("" +(columna-1)+(fila));
+        Vector listaDeMovimientosLegales = new Vector(1,1);
+
+        listaDeMovimientosLegales.addElement("" +(columna)+(fila+1));
+        listaDeMovimientosLegales.addElement("" +(columna+1)+(fila+1));
+        listaDeMovimientosLegales.addElement("" +(columna-1)+(fila+1));
+        listaDeMovimientosLegales.addElement("" +(columna)+(fila-1));
+        listaDeMovimientosLegales.addElement("" +(columna+1)+(fila-1));
+        listaDeMovimientosLegales.addElement("" +(columna-1)+(fila-1));
+        listaDeMovimientosLegales.addElement("" +(columna+1)+(fila));
+        listaDeMovimientosLegales.addElement("" +(columna-1)+(fila));
+
         return listaDeMovimientosLegales;
     }
 

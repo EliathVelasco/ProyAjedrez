@@ -14,13 +14,7 @@ public class Torre extends Pieza implements IMovimientoLateral {
 
     @Override
     public Vector obtenerListaDeMovimientosLegales(int fila, int columna, Tablero tablero) {
-        this.listaDeMovimientosLegales.removeAllElements();
-
-
-
-        this.listaDeMovimientosLegales = IMovimientoLateral.obtenerJugadasLegales(fila,columna,tablero);
-
-        return listaDeMovimientosLegales;
+        return IMovimientoLateral.obtenerJugadasLegales(fila,columna,tablero);
     }
 
 

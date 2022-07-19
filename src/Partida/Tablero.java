@@ -12,9 +12,6 @@ public class Tablero {
     public Tablero() {
         this.casillas = new Casilla[8][8];
 
-        //Cambiar esta huevada porque sale mal
-        //Ya está cambiada esta huevada
-
         casillas[0][0] = new Casilla(new Torre(ColorPiezas.BLANCAS));
         casillas[0][7] = new Casilla(new Torre(ColorPiezas.BLANCAS));
         casillas[7][0] = new Casilla(new Torre(ColorPiezas.NEGRAS));
@@ -61,7 +58,7 @@ public class Tablero {
     }
 
     public void imprimirTablero() {
-        System.out.println("BLANCAS\n[0,0]\n⬇");
+        System.out.println(" a  b  c  d  e  f  g  h ");
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
                 if (casillas[i][j].hayPieza()) {
@@ -69,11 +66,11 @@ public class Tablero {
                 } else {
                     System.out.print("[ ]");
                 }
+
             }
+            System.out.print(i+1);
             System.out.print('\n');
         }
-        System.out.println("⬆\n[7,0]\nNEGRAS");
-        //System.out.println("Turno actual "+getTurnoActual());
     }
 
     public Casilla[][] getCasillas() {

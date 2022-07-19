@@ -10,20 +10,18 @@ public class Peon extends Pieza {
 
     @Override
     public Vector obtenerListaDeMovimientosLegales(int filas, int columna, Tablero tablero) {
-        this.listaDeMovimientosLegales.removeAllElements();
+        Vector listaDeMovimientosLegales = new Vector(1,1);
+        listaDeMovimientosLegales.removeAllElements();
         if (color == ColorPiezas.NEGRAS){
             for (int i = filas-1; i>filas-3 ;i--){
-                this.listaDeMovimientosLegales.addElement("" + i + columna );
+                listaDeMovimientosLegales.addElement("" + i + columna );
             }
         }else{
             for (int i = filas+1; i<filas+3 ;i++){
-                this.listaDeMovimientosLegales.addElement("" + i + columna );
+                listaDeMovimientosLegales.addElement("" + i + columna );
             }
         }
 
-        /*for (int j = 0; j < listaDeMovimientosLegales.size(); j++){
-            System.out.println(listaDeMovimientosLegales.get(j));
-        }*/
         return listaDeMovimientosLegales;
     }
 

@@ -9,7 +9,8 @@ public class Caballo extends Pieza {
 
     @Override
     public Vector obtenerListaDeMovimientosLegales(int fila, int columna, Tablero tablero) {
-        this.listaDeMovimientosLegales.removeAllElements();
+        Vector listaDeMovimientosLegales = new Vector(1,1);
+
         listaDeMovimientosLegales.addElement(""+(columna+1)+(fila+2));
         listaDeMovimientosLegales.addElement(""+(columna-1)+(fila+2));
         listaDeMovimientosLegales.addElement(""+(columna+1)+(fila-2));
@@ -18,6 +19,7 @@ public class Caballo extends Pieza {
         listaDeMovimientosLegales.addElement(""+(columna+2)+(fila-1));
         listaDeMovimientosLegales.addElement(""+(columna-2)+(fila+1));
         listaDeMovimientosLegales.addElement(""+(columna-2)+(fila-1));
+
         return listaDeMovimientosLegales;
     }
 

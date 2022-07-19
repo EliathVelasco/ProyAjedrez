@@ -8,7 +8,7 @@ public class Jugador {
 
     }
 
-    public void ingresarJugada(String casillas, Tablero tablero) throws PiezaNoCorrespondiente{
+    public void ingresarJugada(String casillas, Tablero tablero) throws PiezaNoCorrespondiente, CoordenadasFueraDeRango{
 
         int[] columna = new int[2];
         int[] fila = new int[2];
@@ -23,7 +23,7 @@ public class Jugador {
         
     }
 
-    private int transformarColumnaIngresadaEnIndice(char letra) {
+    private int transformarColumnaIngresadaEnIndice(char letra) throws CoordenadasFueraDeRango{
 
         String cadenaDeLetras = "abcdefgh";
 
@@ -32,11 +32,7 @@ public class Jugador {
                 return  i;
             }
         }
-
-        //Falta que nos enseñe el inge lo de los errores para quitarle este return 0 y poner un error que diga: "La columna
-        //ingresada no es valida." o algo así
-
-        return 0;
+        throw new CoordenadasFueraDeRango("Coordenada ingresada no existe");
     }
 
 }

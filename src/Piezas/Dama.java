@@ -11,13 +11,7 @@ public class Dama extends Pieza implements IMovimientoLateral, IMovimientoDiagon
 
     @Override
     public Vector obtenerListaDeMovimientosLegales(int fila, int columna, Tablero tablero) {
-
         Vector listaDeMovimientosLegales = new Vector(1,1);
-/*
-        this.listaDeMovimientosLegales.removeAllElements();
-
-        this.listaDeMovimientosLegales.addAll(IMovimientoDiagonal.obtenerJugadasLegales(fila,columna,tablero));
-        this.listaDeMovimientosLegales.addAll(IMovimientoLateral.obtenerJugadasLegales(fila,columna,tablero));*/
 
         listaDeMovimientosLegales.addAll(IMovimientoDiagonal.obtenerJugadasLegales(fila,columna,tablero));
         listaDeMovimientosLegales.addAll(IMovimientoLateral.obtenerJugadasLegales(fila,columna,tablero));

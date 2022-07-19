@@ -22,6 +22,7 @@ public class Partida {
     }
 
     public void preguntarJugada() {
+        tablero.imprimirTablero();
         Scanner scannerDelBlanco = new Scanner(System.in);
         Scanner scannerDelNegro = new Scanner(System.in);
 
@@ -34,6 +35,8 @@ public class Partida {
                     setTurnoActual(NEGRAS);
                 } catch (PiezaNoCorrespondiente e) {
                     System.out.println(e.getMessage());
+                } catch (CoordenadasFueraDeRango i){
+                    System.out.println(i.getMessage());
                 }
             }
 
@@ -45,6 +48,8 @@ public class Partida {
                     setTurnoActual(ColorPiezas.BLANCAS);
                 } catch (PiezaNoCorrespondiente e) {
                     System.out.println(e.getMessage());
+                }catch (CoordenadasFueraDeRango i){
+                    System.out.println(i.getMessage());
                 }
             }
 
