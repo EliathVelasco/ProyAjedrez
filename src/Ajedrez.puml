@@ -1,0 +1,79 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+/'
+skinparam groupInheritance 2
+'/
+
+/'
+crear clase jugadas o moviento
+pensar bien la relacion de pieza - tablero
+'/
+
+class Tablero{
+    +actualizarTablero()
+    +imprimirTablero()
+}
+class Casilla{
+    +hayPieza(): boolean
+    +getPieza(): Pieza
+    +quitarPieza()
+    +ponerPieza(Pieza)
+}
+
+class Partida{
+    -jugadas: String
+}
+
+abstract Pieza{
+    -listaDeMovimientosLegales: Vector
+    {abstract}+obtenerListaDeMovimientosLegales(int, int, tablero)
+    +getColor()
+}
+
+class Jugador{
+    +ingresarJugada(String, tablero)
+    -transformarColumnaIngresadaEnIndice(char)
+}
+
+enum Color{
+    BLANCO
+    NEGRO
+}
+
+class Rey{
+    +enrocarEnCorto()
+    +enrocarEnLargo()
+}
+class Peon{
+    +coronar()
+}
+class Torre{}
+class Alfil{}
+class Caballo{}
+class Dama{}
+
+enum Estado{
+    JAQUE
+    JAQUE_MATE
+    CLAVADA
+    EN_TABLERO
+    CAPTURADA
+}
+
+Tablero -->"[8][8]"Casilla
+Casilla--> Pieza
+Pieza <|-- Peon
+Pieza <|-- Caballo
+Pieza <|-- Torre
+Pieza <|-- Alfil
+Pieza <|-- Rey
+Pieza <|-- Dama
+Pieza -right-> Color
+Pieza -left-> Estado
+Partida -->"2" Jugador
+Partida --> Tablero
+Jugador ..> Tablero
+Tablero <... Pieza
+Jugador --->Color
+@enduml
