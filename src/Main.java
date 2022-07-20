@@ -5,5 +5,6 @@ public class Main {
         Partida partida = new Partida();
         partida.preguntarJugada();
         //Eliath es puto
+        //XD
     }
 }
