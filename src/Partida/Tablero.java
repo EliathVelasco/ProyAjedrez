@@ -42,7 +42,7 @@ public class Tablero {
         System.out.println('\n');
     }
 
-    public void actualizarTablero(int[] columna, int[] fila, ColorPiezas colorPieza) throws PiezaNoCorrespondiente {
+    public void actualizarTablero(int[] columna, int[] fila, ColorPiezas colorPieza) throws MovimientoNoVálido {
         Vector listaDeMovimientosLegales = new Vector(15, 5);
         if (casillas[fila[0]][columna[0]].hayPieza() && casillas[fila[0]][columna[0]].getPieza().getColor() == colorPieza) {
             listaDeMovimientosLegales = casillas[fila[0]][columna[0]].getPieza().obtenerListaDeMovimientosLegales(fila[0], columna[0], this);
@@ -53,7 +53,7 @@ public class Tablero {
             casillas[fila[1]][columna[1]].ponerPieza(casillas[fila[0]][columna[0]].getPieza());
             casillas[fila[0]][columna[0]].quitarPieza();
         } else {
-            throw new PiezaNoCorrespondiente("Movimiento no permitido.");
+            throw new MovimientoNoVálido("Movimiento no permitido.");
         }
     }
 

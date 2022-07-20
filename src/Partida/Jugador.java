@@ -9,10 +9,10 @@ public class Jugador {
 
     }
 
-    public void ingresarJugada(String casillas, Tablero tablero) throws PiezaNoCorrespondiente, CoordenadasInválidas {
+    public void ingresarJugada(String casillas, Tablero tablero) throws MovimientoNoVálido, SintáxisInválida {
 
         if (casillas.length() !=4){
-            throw new CoordenadasInválidas("Coordenadas incompletas");
+            throw new SintáxisInválida("Coordenadas incompletas");
         }
 
         int[] columna = new int[2];
@@ -28,7 +28,7 @@ public class Jugador {
         
     }
 
-    private int transformarColumnaIngresadaEnIndice(char letra) throws CoordenadasInválidas {
+    private int transformarColumnaIngresadaEnIndice(char letra) throws SintáxisInválida {
 
         String cadenaDeLetras = "abcdefgh";
 
@@ -37,7 +37,7 @@ public class Jugador {
                 return  i;
             }
         }
-        throw new CoordenadasInválidas("Coordenada ingresada no existe");
+        throw new SintáxisInválida("Coordenada ingresada no existe");
     }
 
 }
