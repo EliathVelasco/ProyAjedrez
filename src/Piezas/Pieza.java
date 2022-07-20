@@ -4,6 +4,7 @@ import Partida.*;
 public abstract class Pieza {
     protected ColorPiezas color;
     public Pieza(ColorPiezas color){
+        System.out.println("NOMBRE");
         this.color = color;
     }
 
