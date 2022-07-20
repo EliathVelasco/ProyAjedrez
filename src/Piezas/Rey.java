@@ -6,7 +6,7 @@ import Partida.*;
 public class Rey extends Pieza {
     private boolean primerMovimiento;
     public Rey(ColorPiezas color) {
-        super(color);
+        super(color,0);
         primerMovimiento = true;
     }
 

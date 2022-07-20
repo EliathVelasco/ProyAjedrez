@@ -7,7 +7,7 @@ import Partida.*;
 
 public class Alfil extends Pieza implements IMovimientoDiagonal{
     public Alfil(ColorPiezas color) {
-        super(color);
+        super(color, 3);
     }
 
     @Override
