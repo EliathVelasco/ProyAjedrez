@@ -4,7 +4,7 @@ import java.util.*;
 import Partida.*;
 public class Caballo extends Pieza {
     public Caballo(ColorPiezas color) {
-        super(color);
+        super(color,3);
     }
 
     @Override

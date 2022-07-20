@@ -6,7 +6,7 @@ import Movimientos.IMovimientoLateral;
 import Partida.*;
 public class Dama extends Pieza implements IMovimientoLateral, IMovimientoDiagonal{
     public Dama(ColorPiezas color) {
-        super(color);
+        super(color,9);
     }
 
     @Override

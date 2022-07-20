@@ -8,7 +8,7 @@ public class Peon extends Pieza {
     private boolean primerMovimiento;
 
     public Peon(ColorPiezas color) {
-        super(color);
+        super(color,1);
         this.primerMovimiento = true;
     }
 

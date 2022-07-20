@@ -8,7 +8,7 @@ import Partida.*;
 
 public class Torre extends Pieza implements IMovimientoLateral {
     public Torre(ColorPiezas color) {
-        super(color);
+        super(color,5);
 
     }
 
