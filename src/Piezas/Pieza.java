@@ -1,10 +1,13 @@
 package Piezas;
+
 import java.util.*;
+
 import Partida.*;
+
 public abstract class Pieza {
     protected ColorPiezas color;
-    public Pieza(ColorPiezas color){
-        System.out.println("NOMBRE");
+
+    public Pieza(ColorPiezas color) {
         this.color = color;
     }
 

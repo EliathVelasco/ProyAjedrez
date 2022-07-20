@@ -37,7 +37,7 @@ public class Jugador {
                 return  i;
             }
         }
-        throw new SintáxisInválida("Coordenada ingresada no existe");
+        throw new SintáxisInválida("Ingreso no válido.");
     }
 
 }
