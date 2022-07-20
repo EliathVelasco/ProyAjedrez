@@ -10,6 +10,7 @@ public class Jugador {
     }
 
     public void ingresarJugada(String casillas, Tablero tablero) throws MovimientoNoVálido, SintáxisInválida {
+        System.out.println("Hola");
 
         if (casillas.length() !=4){
             throw new SintáxisInválida("Coordenadas incompletas");
