@@ -50,8 +50,12 @@ public class Tablero {
 
         String coordenadaADondeSeQuiereMover = "" + fila[1] + columna[1];
         if (listaDeMovimientosLegales.contains(coordenadaADondeSeQuiereMover)) {
+            if (casillas[fila[0]][columna[0]].getPieza() instanceof Peon || casillas[fila[0]][columna[0]].getPieza() instanceof Torre || casillas[fila[0]][columna[0]].getPieza() instanceof Rey) {
+                casillas[fila[0]][columna[0]].getPieza().quitarPrimerMovimiento();
+            }
             casillas[fila[1]][columna[1]].ponerPieza(casillas[fila[0]][columna[0]].getPieza());
             casillas[fila[0]][columna[0]].quitarPieza();
+
         } else {
             throw new MovimientoNoVálido("Movimiento no permitido.");
         }
@@ -68,7 +72,7 @@ public class Tablero {
                 }
 
             }
-            System.out.print(i+1);
+            System.out.print(i + 1);
             System.out.print('\n');
         }
     }
