@@ -1,7 +1,7 @@
 package Errores;
 
-public class CoordenadasInválidas extends Throwable {
-    public CoordenadasInválidas(String message) {
+public class SintaxisInválida extends Throwable {
+    public SintaxisInválida(String message) {
         super(message);
     }
 }
