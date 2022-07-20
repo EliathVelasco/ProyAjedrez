@@ -52,7 +52,6 @@ public class Partida {
                     System.out.println(e.getMessage());
                 }
             }
-
         }
     }
 
