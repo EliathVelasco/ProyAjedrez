@@ -36,7 +36,7 @@ public class Partida {
                     jugadas.addElement(jugadaDelBlanco);
                     tablero.imprimirTablero();
                     setTurnoActual(NEGRAS);
-                } catch (PiezaNoCorrespondiente | CoordenadasInválidas e) {
+                } catch (MovimientoNoVálido | SintáxisInválida e) {
                     System.out.println(e.getMessage());
                 }
             }
@@ -48,7 +48,7 @@ public class Partida {
                     jugadas.addElement(jugadaDelNegro);
                     tablero.imprimirTablero();
                     setTurnoActual(ColorPiezas.BLANCAS);
-                } catch (PiezaNoCorrespondiente | CoordenadasInválidas e) {
+                } catch (MovimientoNoVálido | SintáxisInválida e) {
                     System.out.println(e.getMessage());
                 }
             }
