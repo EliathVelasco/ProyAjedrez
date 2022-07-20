@@ -18,4 +18,7 @@ public abstract class Pieza {
         return color;
     }
 
+    public void quitarPrimerMovimiento() {
+
+    }
 }
