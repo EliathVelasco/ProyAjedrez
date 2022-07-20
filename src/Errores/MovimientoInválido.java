@@ -1,7 +1,7 @@
 package Errores;
 
-public class PiezaNoCorrespondiente extends Exception {
-    public PiezaNoCorrespondiente(String errorMessage) {
+public class MovimientoInválido extends Exception {
+    public MovimientoInválido(String errorMessage) {
         super(errorMessage);
     }
 }
