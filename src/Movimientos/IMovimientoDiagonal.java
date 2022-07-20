@@ -1,7 +1,6 @@
 package Movimientos;
 
 import Partida.Tablero;
-
 import java.util.Vector;
 
 public interface IMovimientoDiagonal {

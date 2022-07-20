@@ -3,6 +3,7 @@ package Partida;
 import Errores.*;
 
 import java.util.Scanner;
+import java.util.Vector;
 
 import static Partida.ColorPiezas.BLANCAS;
 import static Partida.ColorPiezas.NEGRAS;
@@ -10,14 +11,16 @@ import static Partida.ColorPiezas.NEGRAS;
 public class Partida {
     private Jugador jugadorDeBlancas;
     private Jugador jugadorDeNegras;
-    protected Tablero tablero;
+    private Tablero tablero;
     private ColorPiezas turnoActual;
+    private Vector jugadas;
 
     public Partida() {
         this.jugadorDeBlancas = new Jugador(BLANCAS);
         this.jugadorDeNegras = new Jugador(NEGRAS);
         this.tablero = new Tablero();
         this.turnoActual = BLANCAS;
+        this.jugadas = new Vector(1,1);
     }
 
     public void preguntarJugada() {
@@ -30,6 +33,7 @@ public class Partida {
                 try {
                     String jugadaDelBlanco = scannerDelBlanco.next();
                     jugadorDeBlancas.ingresarJugada(jugadaDelBlanco, tablero);
+                    jugadas.addElement(jugadaDelBlanco);
                     tablero.imprimirTablero();
                     setTurnoActual(NEGRAS);
                 } catch (PiezaNoCorrespondiente | CoordenadasInválidas e) {
@@ -41,6 +45,7 @@ public class Partida {
                 try {
                     String jugadaDelNegro = scannerDelNegro.next();
                     jugadorDeNegras.ingresarJugada(jugadaDelNegro, tablero);
+                    jugadas.addElement(jugadaDelNegro);
                     tablero.imprimirTablero();
                     setTurnoActual(ColorPiezas.BLANCAS);
                 } catch (PiezaNoCorrespondiente | CoordenadasInválidas e) {
