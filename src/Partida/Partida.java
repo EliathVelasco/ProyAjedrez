@@ -36,10 +36,8 @@ public class Partida {
                     jugadas.addElement(jugadaDelBlanco);
                     tablero.imprimirTablero();
                     setTurnoActual(NEGRAS);
-                } catch (PiezaNoCorrespondiente e) {
+                } catch (PiezaNoCorrespondiente | CoordenadasInválidas e) {
                     System.out.println(e.getMessage());
-                } catch (CoordenadasInválidas i){
-                    System.out.println(i.getMessage());
                 }
             }
 
@@ -50,10 +48,8 @@ public class Partida {
                     jugadas.addElement(jugadaDelNegro);
                     tablero.imprimirTablero();
                     setTurnoActual(ColorPiezas.BLANCAS);
-                } catch (PiezaNoCorrespondiente e) {
+                } catch (PiezaNoCorrespondiente | CoordenadasInválidas e) {
                     System.out.println(e.getMessage());
-                }catch (CoordenadasInválidas i){
-                    System.out.println(i.getMessage());
                 }
             }
 
