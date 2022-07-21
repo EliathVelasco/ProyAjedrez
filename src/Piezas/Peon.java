@@ -30,7 +30,7 @@ public class Peon extends Pieza {
         if (columna > 0 && filas < 8 && tablero.getCasillas()[filas + 1][columna - 1].hayPieza()) {
             listaDeMovimientosLegales.addElement("" + (filas + 1) + (columna - 1));
 
-        } else if (columna < 8 && filas < 8 && tablero.getCasillas()[filas + 1][columna + 1].hayPieza()) {
+        } else if (columna < 7 && filas < 7 && tablero.getCasillas()[filas + 1][columna + 1].hayPieza()) {
             listaDeMovimientosLegales.addElement("" + (filas + 1) + (columna + 1));
         }
 
@@ -61,7 +61,7 @@ public class Peon extends Pieza {
 
         if (filas > 0 && columna > 0 && tablero.getCasillas()[filas - 1][columna - 1].hayPieza()) {
             listaDeMovimientosLegales.addElement("" + (filas - 1) + (columna - 1));
-        } else if (filas > 0 && columna < 8 && tablero.getCasillas()[filas - 1][columna + 1].hayPieza()) {
+        } else if (filas < 7 && columna < 7 && tablero.getCasillas()[filas - 1][columna + 1].hayPieza()) {
             listaDeMovimientosLegales.addElement("" + (filas - 1) + (columna + 1));
         }
 
