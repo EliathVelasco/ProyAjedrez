@@ -32,7 +32,7 @@ public class Partida {
             while (turnoActual == BLANCAS) {
                 try {
                     String jugadaDelBlanco = scannerDelBlanco.next();
-                    jugadorDeBlancas.ingresarJugada(jugadaDelBlanco, tablero);
+                    jugadorDeBlancas.ingresarJugada(jugadaDelBlanco.toLowerCase(), tablero);
                     jugadas.addElement(jugadaDelBlanco);
                     tablero.imprimirTablero();
                     setTurnoActual(NEGRAS);
@@ -44,7 +44,7 @@ public class Partida {
             while (turnoActual == NEGRAS) {
                 try {
                     String jugadaDelNegro = scannerDelNegro.next();
-                    jugadorDeNegras.ingresarJugada(jugadaDelNegro, tablero);
+                    jugadorDeNegras.ingresarJugada(jugadaDelNegro.toLowerCase(), tablero);
                     jugadas.addElement(jugadaDelNegro);
                     tablero.imprimirTablero();
                     setTurnoActual(ColorPiezas.BLANCAS);

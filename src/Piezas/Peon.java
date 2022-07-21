@@ -30,7 +30,7 @@ public class Peon extends Pieza {
         if (columna > 0 && filas < 8 && tablero.getCasillas()[filas + 1][columna - 1].hayPieza()) {
             listaDeMovimientosLegales.addElement("" + (filas + 1) + (columna - 1));
 
-        } else if (columna < 8 && filas < 8 && tablero.getCasillas()[filas + 1][columna + 1].hayPieza()) {
+        } else if (columna < 7 && filas < 7 && tablero.getCasillas()[filas + 1][columna + 1].hayPieza()) {
             listaDeMovimientosLegales.addElement("" + (filas + 1) + (columna + 1));
         }
 
@@ -46,7 +46,6 @@ public class Peon extends Pieza {
             listaDeMovimientosLegales.add("" + (filas + 1) + columna);
         }
     }
-
     private void agregarMovimientosPiezasNegras(int filas, int columna, Vector listaDeMovimientosLegales) {
         if (primerMovimiento) {
             for (int i = filas - 1; i > filas - 3; i--) {
@@ -61,7 +60,7 @@ public class Peon extends Pieza {
 
         if (filas > 0 && columna > 0 && tablero.getCasillas()[filas - 1][columna - 1].hayPieza()) {
             listaDeMovimientosLegales.addElement("" + (filas - 1) + (columna - 1));
-        } else if (filas > 0 && columna < 8 && tablero.getCasillas()[filas - 1][columna + 1].hayPieza()) {
+        } else if (filas < 7 && columna < 7 && tablero.getCasillas()[filas - 1][columna + 1].hayPieza()) {
             listaDeMovimientosLegales.addElement("" + (filas - 1) + (columna + 1));
         }
 
