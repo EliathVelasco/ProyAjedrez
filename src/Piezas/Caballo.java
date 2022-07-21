@@ -11,14 +11,16 @@ public class Caballo extends Pieza {
     public Vector obtenerListaDeMovimientosLegales(int fila, int columna, Tablero tablero) {
         Vector listaDeMovimientosLegales = new Vector(1,1);
 
-        listaDeMovimientosLegales.addElement(""+(columna+1)+(fila+2));
-        listaDeMovimientosLegales.addElement(""+(columna-1)+(fila+2));
-        listaDeMovimientosLegales.addElement(""+(columna+1)+(fila-2));
-        listaDeMovimientosLegales.addElement(""+(columna-1)+(fila-2));
-        listaDeMovimientosLegales.addElement(""+(columna+2)+(fila+1));
-        listaDeMovimientosLegales.addElement(""+(columna+2)+(fila-1));
-        listaDeMovimientosLegales.addElement(""+(columna-2)+(fila+1));
-        listaDeMovimientosLegales.addElement(""+(columna-2)+(fila-1));
+
+        //se puede reducir el tamaño haciendo unas comprobaciones pero desde la partida lo para tonces no pasa nada xd
+        listaDeMovimientosLegales.addElement(""+(fila+2)+(columna+1));
+        listaDeMovimientosLegales.addElement(""+(fila+2)+(columna-1));
+        listaDeMovimientosLegales.addElement(""+(fila+1)+(columna+2));
+        listaDeMovimientosLegales.addElement(""+(fila+1)+(columna-2));
+        listaDeMovimientosLegales.addElement(""+(fila-2)+(columna+1));
+        listaDeMovimientosLegales.addElement(""+(fila-2)+(columna-1));
+        listaDeMovimientosLegales.addElement(""+(fila-1)+(columna+2));
+        listaDeMovimientosLegales.addElement(""+(fila-1)+(columna-2));
 
         return listaDeMovimientosLegales;
     }
