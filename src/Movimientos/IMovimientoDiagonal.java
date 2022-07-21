@@ -20,7 +20,7 @@ public interface IMovimientoDiagonal {
             } else {
                 break;
             }
-            if (auxColumna1 < 8){
+            if (auxColumna1 < 7){
                 auxColumna1++;
             } else {
                 break;
@@ -39,7 +39,7 @@ public interface IMovimientoDiagonal {
             } else {
                 break;
             }
-            if (auxColumna1 < 8){
+            if (auxColumna1 < 7){
                 auxColumna1++;
             } else {
                 break;
@@ -75,7 +75,7 @@ public interface IMovimientoDiagonal {
             } else {
                 break;
             }
-            if (auxColumna2 >= 0){
+            if (auxColumna2 > 0){
                 auxColumna2--;
             } else {
                 break;

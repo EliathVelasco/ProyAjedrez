@@ -7,8 +7,10 @@ import Movimientos.IMovimientoLateral;
 import Partida.*;
 
 public class Torre extends Pieza implements IMovimientoLateral {
+    private boolean primerMovimiento;
     public Torre(ColorPiezas color) {
         super(color,5);
+        this.primerMovimiento = true;
 
     }
 
@@ -21,5 +23,14 @@ public class Torre extends Pieza implements IMovimientoLateral {
     @Override
     public String toString() {
         return "T";
+    }
+
+    @Override
+    public void quitarPrimerMovimiento() {
+        this.primerMovimiento = false;
+    }
+    @Override
+    protected boolean noSeHaMovido() {
+        return primerMovimiento;
     }
 }
