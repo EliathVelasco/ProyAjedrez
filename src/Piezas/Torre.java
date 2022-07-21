@@ -30,7 +30,7 @@ public class Torre extends Pieza implements IMovimientoLateral {
         this.primerMovimiento = false;
     }
     @Override
-    protected boolean noSeHaMovido() {
+    public boolean noSeHaMovido() {
         return primerMovimiento;
     }
 

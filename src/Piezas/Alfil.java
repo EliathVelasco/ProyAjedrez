@@ -43,7 +43,6 @@ public class Alfil extends Pieza implements IMovimientoDiagonal{
             } else {
                 break;
             }
-
         }
 
         //Movimiento derecha hacia arriba

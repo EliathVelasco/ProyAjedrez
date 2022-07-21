@@ -24,7 +24,7 @@ public abstract class Pieza {
     }
 
     //cambiar esta movida
-    protected boolean noSeHaMovido() {
-        return false;
+    public boolean noSeHaMovido() {
+        return true;
     }
 }
