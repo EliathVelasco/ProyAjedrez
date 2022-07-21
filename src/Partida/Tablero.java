@@ -53,8 +53,22 @@ public class Tablero {
             if (casillas[fila[0]][columna[0]].getPieza() instanceof Peon || casillas[fila[0]][columna[0]].getPieza() instanceof Torre || casillas[fila[0]][columna[0]].getPieza() instanceof Rey) {
                 casillas[fila[0]][columna[0]].getPieza().quitarPrimerMovimiento();
             }
-            casillas[fila[1]][columna[1]].ponerPieza(casillas[fila[0]][columna[0]].getPieza());
-            casillas[fila[0]][columna[0]].quitarPieza();
+
+            if (coordenadaADondeSeQuiereMover.equals("06") && casillas[fila[0]][columna[0]].getPieza() instanceof Rey && casillas[fila[0]][columna[0]+3].getPieza().noSeHaMovido()){
+                casillas[fila[1]][columna[1]].ponerPieza(new Rey(colorPieza));
+                casillas[fila[0]][columna[0]+1].ponerPieza(new Torre(colorPieza));
+                casillas[fila[0]][columna[0]+3].quitarPieza();
+                casillas[fila[0]][columna[0]].quitarPieza();
+            } else if (coordenadaADondeSeQuiereMover.equals("02") && casillas[fila[0]][columna[0]].getPieza() instanceof Rey && casillas[fila[0]][columna[0]-4].getPieza().noSeHaMovido()) {
+                casillas[fila[1]][columna[1]].ponerPieza(casillas[fila[0]][columna[0]].getPieza());
+                casillas[fila[0]][columna[0]-1].ponerPieza(new Torre(colorPieza));
+                casillas[fila[0]][columna[0]-4].quitarPieza();
+                casillas[fila[0]][columna[0]].quitarPieza();
+            } else {
+                casillas[fila[1]][columna[1]].ponerPieza(casillas[fila[0]][columna[0]].getPieza());
+                casillas[fila[0]][columna[0]].quitarPieza();
+            }
+
 
         } else {
             throw new MovimientoNoVálido("Movimiento no permitido.");

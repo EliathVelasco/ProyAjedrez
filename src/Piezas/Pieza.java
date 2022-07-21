@@ -21,6 +21,10 @@ public abstract class Pieza {
     }
 
     public void quitarPrimerMovimiento() {
+    }
 
+    //cambiar esta movida
+    public boolean noSeHaMovido() {
+        return true;
     }
 }
