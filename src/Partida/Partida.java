@@ -32,11 +32,13 @@ public class Partida {
             while (turnoActual == BLANCAS) {
                 try {
                     String jugadaDelBlanco = scannerDelBlanco.next();
+                    Jugada jugadaBlanca = new Jugada(jugadaDelBlanco);
+
                     jugadorDeBlancas.ingresarJugada(jugadaDelBlanco.toLowerCase(), tablero);
                     jugadas.addElement(jugadaDelBlanco);
                     tablero.imprimirTablero();
                     setTurnoActual(NEGRAS);
-                } catch (MovimientoNoVálido | SintáxisInválida e) {
+                } catch (MovimientoNoVálido | SintáxisInválida | FilaInvalida e) {
                     System.out.println(e.getMessage());
                 }
             }
