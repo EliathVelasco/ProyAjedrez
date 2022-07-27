@@ -2,6 +2,7 @@ package Piezas;
 
 import java.util.*;
 
+import Errores.MovimientoNoVálido;
 import Partida.*;
 
 public abstract class Pieza {
@@ -13,7 +14,7 @@ public abstract class Pieza {
         this.color = color;
     }
 
-    public abstract Vector obtenerListaDeMovimientosLegales(int fila, int columna, Tablero tablero);
+    //public abstract Vector obtenerListaDeMovimientosLegales(int fila, int columna, Tablero tablero);
 
 
     public ColorPiezas getColor() {
@@ -28,5 +29,5 @@ public abstract class Pieza {
         return true;
     }
 
-    public abstract ArrayList<String> obtenerMovimientosLegales(Jugada jugada);
+    public abstract ArrayList<String> obtenerMovimientosLegales(Jugada jugada) throws MovimientoNoVálido;
 }

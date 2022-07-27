@@ -1,5 +1,6 @@
 package Partida;
 
+import Errores.MovimientoNoVálido;
 import Piezas.Pieza;
 
 import java.util.ArrayList;
@@ -40,7 +41,7 @@ public class Casilla {
         return pieza.getColor();
     }
 
-    public ArrayList<String> movimientosDePieza(Jugada jugada) {
+    public ArrayList<String> movimientosDePieza(Jugada jugada) throws MovimientoNoVálido {
         return pieza.obtenerMovimientosLegales(jugada);
     }
 }
