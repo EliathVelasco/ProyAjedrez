@@ -2,6 +2,8 @@ package Partida;
 
 import Piezas.Pieza;
 
+import java.util.ArrayList;
+
 public class Casilla {
     private Pieza pieza;
 
@@ -34,4 +36,11 @@ public class Casilla {
     }
 
 
+    public ColorPiezas getColorDePieza() {
+        return pieza.getColor();
+    }
+
+    public ArrayList<String> movimientosDePieza(Jugada jugada) {
+        return pieza.obtenerMovimientosLegales(jugada);
+    }
 }

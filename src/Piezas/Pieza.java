@@ -27,4 +27,6 @@ public abstract class Pieza {
     public boolean noSeHaMovido() {
         return true;
     }
+
+    public abstract ArrayList<String> obtenerMovimientosLegales(Jugada jugada);
 }

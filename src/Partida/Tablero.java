@@ -3,14 +3,17 @@ package Partida;
 import Piezas.*;
 import Errores.*;
 
+import java.util.ArrayList;
 import java.util.Vector;
 
 public class Tablero {
+    public static int NUMERO_DE_FILAS = 8;
+    public static int NUMERO_DE_COLUMNAS = 8;
     private Casilla[][] casillas;
 
 
     public Tablero() {
-        this.casillas = new Casilla[8][8];
+        this.casillas = new Casilla[NUMERO_DE_FILAS][NUMERO_DE_COLUMNAS];
 
         casillas[0][0] = new Casilla(new Torre(ColorPiezas.BLANCAS));
         casillas[0][7] = new Casilla(new Torre(ColorPiezas.BLANCAS));
@@ -93,5 +96,21 @@ public class Tablero {
 
     public Casilla[][] getCasillas() {
         return casillas;
+    }
+
+    public void hacerJugada(Jugada jugada) {
+        if (sePuedeHacerJugada(jugada)){
+            pedirMovimientosALaPieza(jugada);
+        }
+    }
+
+    private void pedirMovimientosALaPieza(Jugada jugada) {
+        ArrayList<String> jugadasDePieza = new ArrayList<>();
+        jugadasDePieza = casillas[jugada.getFilaInicial()][jugada.getColumnaInicial()].movimientosDePieza(jugada);
+    }
+
+    private boolean sePuedeHacerJugada(Jugada jugada) {
+        return casillas[jugada.getFilaInicial()][jugada.getColumnaInicial()].hayPieza() &&
+                casillas[jugada.getFilaInicial()][jugada.getColumnaInicial()].getColorDePieza() == jugada.getColor();
     }
 }

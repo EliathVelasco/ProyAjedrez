@@ -15,6 +15,22 @@ public class Alfil extends Pieza implements IMovimientoDiagonal{
         return obtenerJugadasLegalesDiagonales(fila, columna, tablero);
     }
 
+    @Override
+    public ArrayList<String> obtenerMovimientosLegales(Jugada jugada) {
+        ArrayList<String> movimientos = new ArrayList<>();
+        String aux = "" + jugada.getFilaFinal() + jugada.getColumnaFinal();
+
+        int auxColumna1 = jugada.getColumnaInicial() + 1 ;
+
+
+        //Movimiento derecha hacia abajo
+        for (int i = jugada.getFilaInicial()+1; i < 8; i++){
+
+        }
+
+        return null;
+    }
+
 
     @Override
     public String toString() {
