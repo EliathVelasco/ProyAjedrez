@@ -34,6 +34,46 @@ public class Torre extends Pieza implements IMovimientoLateral {
         return primerMovimiento;
     }
 
+    public ArrayList<ArrayList<int[]>> obtenerJugadas(Jugada jugada) {
+        ArrayList<ArrayList<int[]>> movimientosPosibles = new ArrayList<>();
+        ArrayList<int[]> aux = new ArrayList<>();
+
+        //Movimientos hacia abajo
+        for (int i = jugada.getFilaInicial(); i<8;i++){
+            aux.add(new int[]{i, jugada.getColumnaInicial()});
+        }
+
+        limpiarYAñadir(movimientosPosibles, aux);
+
+        //Movimientos hacia arriba
+        for (int i = jugada.getFilaInicial(); i>=0; i--){
+            aux.add(new int[]{i, jugada.getColumnaInicial()});
+        }
+
+        limpiarYAñadir(movimientosPosibles, aux);
+
+        //Movimientos hacia la izquierda
+        for (int i = jugada.getColumnaInicial(); i>=0; i--){
+            aux.add(new int[]{jugada.getFilaInicial(), i});
+        }
+
+        limpiarYAñadir(movimientosPosibles, aux);
+
+        //Movimientos hacia la derecha
+        for (int i = jugada.getColumnaInicial(); i <8; i++){
+            aux.add(new int[]{jugada.getFilaInicial(), i});
+        }
+
+        limpiarYAñadir(movimientosPosibles, aux);
+
+        return movimientosPosibles;
+    }
+
+    private void limpiarYAñadir(ArrayList<ArrayList<int[]>> movimientosPosibles, ArrayList<int[]> aux) {
+        movimientosPosibles.add((ArrayList<int[]>) aux.clone());
+        aux.clear();
+    }
+
     @Override
     public Vector obtenerJugadasLegalesLaterales(int filaInicial, int columnaInicial, Tablero tablero) {
         Vector listaDeJugadas = new Vector(1, 1);
