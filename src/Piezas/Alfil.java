@@ -21,6 +21,80 @@ public class Alfil extends Pieza implements IMovimientoDiagonal{
         return "A";
     }
 
+    public ArrayList<ArrayList<int[]>> obtenerJugadas(Jugada jugada){
+        int [] auxCoordenadas = new int [2];
+        ArrayList<ArrayList<int []>> movimientosPosibles = new ArrayList<>();
+        ArrayList<int []> aux = new ArrayList<>();
+
+        int auxColumna = jugada.getColumnaInicial();
+
+        for (int i = jugada.getFilaInicial(); i < 8; i++){
+            auxCoordenadas[0] = i;
+            auxCoordenadas[1] = auxColumna;
+            aux.add(auxCoordenadas);
+
+            if (auxColumna < 7){
+                auxColumna++;
+            }else {
+                break;
+            }
+        }
+
+        movimientosPosibles.add(aux);
+        aux.clear();
+
+        auxColumna = jugada.getColumnaInicial();
+
+        for (int i = jugada.getFilaInicial(); i < 8; i++){
+
+            auxCoordenadas[0] = i;
+            auxCoordenadas[1] = auxColumna;
+            aux.add(auxCoordenadas);
+
+            if (auxColumna > 0){
+                auxColumna--;
+            }else {
+                break;
+            }
+        }
+
+        movimientosPosibles.add(aux);
+        aux.clear();
+
+        auxColumna = jugada.getColumnaInicial();
+
+        for (int i = jugada.getFilaInicial(); i >= 0; i--){
+            auxCoordenadas[0] = i;
+            auxCoordenadas[1] = auxColumna;
+            aux.add(auxCoordenadas);
+            if (auxColumna < 7){
+                auxColumna++;
+            }else {
+                break;
+            }
+        }
+        movimientosPosibles.add(aux);
+        aux.clear();
+
+        auxColumna = jugada.getColumnaInicial();
+
+        for (int i = jugada.getFilaInicial(); i >= 0; i--){
+            auxCoordenadas[0] = i;
+            auxCoordenadas[1] = auxColumna;
+            aux.add(auxCoordenadas);
+            if (auxColumna > 0){
+                auxColumna--;
+            }else {
+                break;
+            }
+        }
+
+        movimientosPosibles.add(aux);
+        aux.clear();
+
+        return movimientosPosibles;
+    }
+
     @Override
     public Vector obtenerJugadasLegalesDiagonales(int filaInicial, int columnaInicial, Tablero tablero) {
         Vector listaDeJugadas = new Vector(1,1);
