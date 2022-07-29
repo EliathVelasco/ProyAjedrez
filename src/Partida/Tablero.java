@@ -95,4 +95,7 @@ public class Tablero {
     public Casilla[][] getCasillas() {
         return casillas;
     }
+
+    public void hacerJugada(Jugada jugada) {
+    }
 }
