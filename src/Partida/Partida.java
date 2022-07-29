@@ -30,8 +30,8 @@ public class Partida {
             while (turnoActual == BLANCAS) {
                 try {
                     Jugada jugadaBlanca = jugadorDeBlancas.ingresarJugada();
-                    //tablero.confirmarJugada(jugadaBlanca);
-                    //jugadas.addElement(jugadaDelBlanco);
+                    tablero.hacerJugada(jugadaBlanca);
+                    jugadas.addElement(jugadaBlanca);
                     tablero.imprimirTablero();
                     setTurnoActual(NEGRAS);
                 } catch (MovimientoNoVálido | SintáxisInválida e) {
