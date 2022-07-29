@@ -25,13 +25,15 @@ public class Partida {
 
     public void preguntarJugada() {
         tablero.imprimirTablero();
+        Scanner scannerDelBlanco = new Scanner(System.in);
+        Scanner scannerDelNegro = new Scanner(System.in);
 
         for (; ; ) {
             while (turnoActual == BLANCAS) {
                 try {
-                    Jugada jugadaBlanca = jugadorDeBlancas.ingresarJugada();
-                    //tablero.confirmarJugada(jugadaBlanca);
-                    //jugadas.addElement(jugadaDelBlanco);
+                    String jugadaDelBlanco = scannerDelBlanco.next();
+                    Jugada jugadaBlanca = new Jugada(jugadaDelBlanco, BLANCAS);
+                    jugadas.addElement(jugadaDelBlanco);
                     tablero.imprimirTablero();
                     setTurnoActual(NEGRAS);
                 } catch (MovimientoNoVálido | SintáxisInválida e) {
@@ -41,8 +43,9 @@ public class Partida {
 
             while (turnoActual == NEGRAS) {
                 try {
-                    jugadorDeNegras.ingresarJugada();
-                    //jugadas.addElement(jugadaDelNegro);
+                    String jugadaDelNegro = scannerDelNegro.next();
+                    Jugada jugadaNegra = new Jugada(jugadaDelNegro, NEGRAS);
+                    jugadas.addElement(jugadaDelNegro);
                     tablero.imprimirTablero();
                     setTurnoActual(ColorPiezas.BLANCAS);
                 } catch (MovimientoNoVálido | SintáxisInválida e) {

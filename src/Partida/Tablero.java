@@ -6,8 +6,9 @@ import Errores.*;
 import java.util.Vector;
 
 public class Tablero {
+    public static final int NUMERO_DE_FILAS = 8;
+    public static final int NUMERO_DE_COLUMNAS = 8;
     private Casilla[][] casillas;
-
 
     public Tablero() {
         this.casillas = new Casilla[8][8];

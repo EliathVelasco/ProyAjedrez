@@ -11,7 +11,7 @@ public class Jugador {
 
     }
 
-    public Jugada ingresarJugada() throws MovimientoNoVálido, SintáxisInválida, FilaInvalida {
+    public Jugada ingresarJugada() throws MovimientoNoVálido, SintáxisInválida{
         Scanner scannerDelBlanco = new Scanner(System.in);
         String jugadaDelBlanco = scannerDelBlanco.next();
         Jugada jugada = new Jugada(jugadaDelBlanco, colorPiezas);
