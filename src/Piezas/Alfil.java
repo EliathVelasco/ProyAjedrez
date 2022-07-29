@@ -85,6 +85,7 @@ public class Alfil extends Pieza implements IMovimientoDiagonal{
         return movimientosPosibles;
     }
 
+
     @Override
     public Vector obtenerJugadasLegalesDiagonales(int filaInicial, int columnaInicial, Tablero tablero) {
         Vector listaDeJugadas = new Vector(1,1);
