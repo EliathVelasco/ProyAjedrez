@@ -22,16 +22,14 @@ public class Alfil extends Pieza implements IMovimientoDiagonal{
     }
 
     public ArrayList<ArrayList<int[]>> obtenerJugadas(Jugada jugada){
-        int [] auxCoordenadas = new int [2];
         ArrayList<ArrayList<int []>> movimientosPosibles = new ArrayList<>();
         ArrayList<int []> aux = new ArrayList<>();
+
 
         int auxColumna = jugada.getColumnaInicial();
 
         for (int i = jugada.getFilaInicial(); i < 8; i++){
-            auxCoordenadas[0] = i;
-            auxCoordenadas[1] = auxColumna;
-            aux.add(auxCoordenadas);
+            aux.add(new int[] {i, auxColumna});
 
             if (auxColumna < 7){
                 auxColumna++;
@@ -40,17 +38,13 @@ public class Alfil extends Pieza implements IMovimientoDiagonal{
             }
         }
 
-        movimientosPosibles.add(aux);
+        movimientosPosibles.add((ArrayList<int[]>) aux.clone());
         aux.clear();
 
         auxColumna = jugada.getColumnaInicial();
 
         for (int i = jugada.getFilaInicial(); i < 8; i++){
-
-            auxCoordenadas[0] = i;
-            auxCoordenadas[1] = auxColumna;
-            aux.add(auxCoordenadas);
-
+            aux.add(new int[] {i, auxColumna});
             if (auxColumna > 0){
                 auxColumna--;
             }else {
@@ -58,30 +52,26 @@ public class Alfil extends Pieza implements IMovimientoDiagonal{
             }
         }
 
-        movimientosPosibles.add(aux);
+        movimientosPosibles.add((ArrayList<int[]>) aux.clone());
         aux.clear();
 
         auxColumna = jugada.getColumnaInicial();
 
         for (int i = jugada.getFilaInicial(); i >= 0; i--){
-            auxCoordenadas[0] = i;
-            auxCoordenadas[1] = auxColumna;
-            aux.add(auxCoordenadas);
+            aux.add(new int[] {i, auxColumna});
             if (auxColumna < 7){
                 auxColumna++;
             }else {
                 break;
             }
         }
-        movimientosPosibles.add(aux);
+        movimientosPosibles.add((ArrayList<int[]>) aux.clone());
         aux.clear();
 
         auxColumna = jugada.getColumnaInicial();
 
         for (int i = jugada.getFilaInicial(); i >= 0; i--){
-            auxCoordenadas[0] = i;
-            auxCoordenadas[1] = auxColumna;
-            aux.add(auxCoordenadas);
+            aux.add(new int[] {i, auxColumna});
             if (auxColumna > 0){
                 auxColumna--;
             }else {
@@ -89,7 +79,7 @@ public class Alfil extends Pieza implements IMovimientoDiagonal{
             }
         }
 
-        movimientosPosibles.add(aux);
+        movimientosPosibles.add((ArrayList<int[]>) aux.clone());
         aux.clear();
 
         return movimientosPosibles;
