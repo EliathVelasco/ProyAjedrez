@@ -21,6 +21,71 @@ public class Alfil extends Pieza implements IMovimientoDiagonal{
         return "A";
     }
 
+    public ArrayList<ArrayList<int[]>> obtenerJugadas(Jugada jugada){
+        ArrayList<ArrayList<int []>> movimientosPosibles = new ArrayList<>();
+        ArrayList<int []> aux = new ArrayList<>();
+
+
+        int auxColumna = jugada.getColumnaInicial();
+
+        for (int i = jugada.getFilaInicial(); i < 8; i++){
+            aux.add(new int[] {i, auxColumna});
+
+            if (auxColumna < 7){
+                auxColumna++;
+            }else {
+                break;
+            }
+        }
+
+        movimientosPosibles.add((ArrayList<int[]>) aux.clone());
+        aux.clear();
+
+        auxColumna = jugada.getColumnaInicial();
+
+        for (int i = jugada.getFilaInicial(); i < 8; i++){
+            aux.add(new int[] {i, auxColumna});
+            if (auxColumna > 0){
+                auxColumna--;
+            }else {
+                break;
+            }
+        }
+
+        movimientosPosibles.add((ArrayList<int[]>) aux.clone());
+        aux.clear();
+
+        auxColumna = jugada.getColumnaInicial();
+
+        for (int i = jugada.getFilaInicial(); i >= 0; i--){
+            aux.add(new int[] {i, auxColumna});
+            if (auxColumna < 7){
+                auxColumna++;
+            }else {
+                break;
+            }
+        }
+        movimientosPosibles.add((ArrayList<int[]>) aux.clone());
+        aux.clear();
+
+        auxColumna = jugada.getColumnaInicial();
+
+        for (int i = jugada.getFilaInicial(); i >= 0; i--){
+            aux.add(new int[] {i, auxColumna});
+            if (auxColumna > 0){
+                auxColumna--;
+            }else {
+                break;
+            }
+        }
+
+        movimientosPosibles.add((ArrayList<int[]>) aux.clone());
+        aux.clear();
+
+        return movimientosPosibles;
+    }
+
+
     @Override
     public Vector obtenerJugadasLegalesDiagonales(int filaInicial, int columnaInicial, Tablero tablero) {
         Vector listaDeJugadas = new Vector(1,1);
