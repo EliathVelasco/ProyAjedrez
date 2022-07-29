@@ -7,6 +7,20 @@ public class Caballo extends Pieza {
         super(color,3);
     }
 
+    public ArrayList<int[]> obtenerJugadas(Jugada jugada) {
+        ArrayList<int[]> movimientosPosibles = new ArrayList<>();
+        movimientosPosibles.add(new int []{jugada.getFilaInicial()+2, jugada.getColumnaInicial()+1});
+        movimientosPosibles.add(new int []{jugada.getFilaInicial()+2, jugada.getColumnaInicial()-1});
+        movimientosPosibles.add(new int []{jugada.getFilaInicial()+1, jugada.getColumnaInicial()+2});
+        movimientosPosibles.add(new int []{jugada.getFilaInicial()+1, jugada.getColumnaInicial()-2});
+        movimientosPosibles.add(new int []{jugada.getFilaInicial()-2, jugada.getColumnaInicial()+1});
+        movimientosPosibles.add(new int []{jugada.getFilaInicial()-2, jugada.getColumnaInicial()-1});
+        movimientosPosibles.add(new int []{jugada.getFilaInicial()-1, jugada.getColumnaInicial()+2});
+        movimientosPosibles.add(new int []{jugada.getFilaInicial()-1, jugada.getColumnaInicial()-2});
+
+        return movimientosPosibles;
+    }
+
     @Override
     public Vector obtenerListaDeMovimientosLegales(int fila, int columna, Tablero tablero) {
         Vector listaDeMovimientosLegales = new Vector(1,1);
